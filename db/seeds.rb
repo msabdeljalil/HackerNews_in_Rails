@@ -9,15 +9,15 @@ require 'faker'
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 10.times do
-  User.create(username: "Jim", password: "password")
+  User.create(username: Faker::Name.name, password: "password", email: Faker::Internet.email)
 end
 
 User.all.each do |user|
-  Item.create(body: Faker::Company.bs, link: "www.google.com", user_id: user.id)
+  Item.create(body: Faker::Company.bs, link: Faker::Internet.url, user_id: user.id, name: Faker::Lorem.sentence)
 end
 
 User.all.each do |user|
   5.times do
-    Item.create(body: Faker::Company.bs, link: "www.google.com", user_id: user.id, parent_id: Item.all.sample.id)
+    Item.create(body: Faker::Company.bs, link: Faker::Internet.url, user_id: user.id, name: Faker::Lorem.sentence, parent_id: Item.all.sample.id)
   end
 end

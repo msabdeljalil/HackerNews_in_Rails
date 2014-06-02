@@ -1,0 +1,13 @@
+<nav>
+  <span>
+    <%= link_to "Hacker News", "/" %>
+    <% if !session[:user_id]  %>
+      <%= link_to "Login", "sessions/new" %>
+    <% else %>
+      <%= link_to("Profile", "users/#{session[:user_id]}") %>
+      <%= link_to("Logout", "sessions/new", method: :delete) %>
+    <% end %>
+    <%= link_to("submit", "items/new") %>
+
+  </span>
+</nav>

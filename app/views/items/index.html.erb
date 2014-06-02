@@ -1,0 +1,15 @@
+<ol>
+<% @items.each do |item| %>
+
+<li>
+  <p>
+    <%= link_to item.name, item.link %><br>
+    <span>
+      <%= item.user.username %> - <%= link_to "#{item.subcomments.length.to_s} comments", "/items/#{item.id}" %> - <%= time_ago_in_words(item.created_at) %> ago
+    </span>
+  </p>
+</li>
+
+
+<%end%>
+</ol>

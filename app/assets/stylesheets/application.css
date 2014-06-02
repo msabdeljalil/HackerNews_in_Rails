@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+.indent {
+  margin-left: 20px;
+}
+
+.com_body {
+  margin-left: 30px;
+}

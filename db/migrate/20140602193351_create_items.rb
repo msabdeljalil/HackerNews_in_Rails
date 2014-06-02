@@ -2,6 +2,7 @@ class CreateItems < ActiveRecord::Migration
   def change
     create_table :items do |t|
       t.text :body
+      t.string :name
       t.string :link
       t.integer :user_id
       t.integer :parent_id

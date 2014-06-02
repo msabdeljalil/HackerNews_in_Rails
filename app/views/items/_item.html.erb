@@ -1,0 +1,35 @@
+<% if params[:comment] %>
+  <%= item = params[:comment] %>
+<% else %>
+  <% item = @item %>
+<% end %>
+
+<div class="main">
+  <p><%= item.user.username %> - <%= item.created_at %> - <%= item.link %></p>
+</div>
+
+
+<div class="indent">
+  <h2>INDENT STARTS</h2>
+  <% item.subcomments.each do |subcomment| %>
+    <p><%= subcomment.user.username %> - <%= subcomment.created_at %> - <%= subcomment.body %> ---<%= subcomment.subcomments.length %></p>
+  <%end%>
+</div>
+
+
+
+
+
+
+
+
+<!-- Working on displaying nested comments recursively -->
+<!-- <div class="indent">
+  <h2>INDENT STARTS</h2>
+  <%# item.subcomments.each do |subcomment| %>
+    <p><%#= subcomment.user.username %> - <%#= subcomment.created_at %> - <%#= subcomment.link %> ---<%#= subcomment.subcomments.length %></p>
+    <%# if subcomment.subcomments.first %>
+      <%#= render "item", locals: {comment: subcomment.subcomments.first} %>
+    <%#end %>
+  <%#end%>
+</div> -->

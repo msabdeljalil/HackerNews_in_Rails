@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20140602193351) do
 
   create_table "items", force: true do |t|
     t.text     "body"
+    t.string   "name"
     t.string   "link"
     t.integer  "user_id"
     t.integer  "parent_id"

@@ -1,0 +1,6 @@
+<%= form_for :item do |f| %>
+  Name: <%= f.text_field :name %><br />
+  Link: <%= f.url_field :link %><br />
+  Body: <%= f.text_area :body %><br />
+  <%= f.submit %>
+<%end%>
