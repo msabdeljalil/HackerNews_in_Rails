@@ -1,20 +1,15 @@
+<!--  On lines 3 and 9, append .username to the user (Once u have log in enabled...-->
 <div class="main">
-  <p><%= link_to(@item.name, @item.link)%> <%=@item.user.username %> - <%= time_ago_in_words(@item.created_at) %></p>
+  <p><%= link_to(@item.name, @item.link)%> <%=@item.user %> - <%= time_ago_in_words(@item.created_at) %></p>
 </div>
 
 
 <div class="indent">
   <% @item.subcomments.each do |subcomment| %>
-    <p class="com_header"> <%= subcomment.user.username %> - <%= link_to "#{subcomment.subcomments.length.to_s} comments", "/items/#{subcomment.id}" %> - <%= time_ago_in_words(subcomment.created_at) %> ago</p>
+    <p class="com_header"> <%= subcomment.user%> - <%= link_to "#{subcomment.subcomments.length.to_s} comments", "/items/#{subcomment.id}" %> - <%= time_ago_in_words(subcomment.created_at) %> ago</p>
     <p class="com_body"><%= subcomment.body %></p>
   <%end%>
 </div>
 
-
-
-
-
-
-
-
+<%= link_to('Back', items_path) %>
 

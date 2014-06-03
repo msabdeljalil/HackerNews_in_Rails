@@ -7,7 +7,7 @@
       <%= link_to("Profile", "users/#{session[:user_id]}") %>
       <%= link_to("Logout", "sessions/new", method: :delete) %>
     <% end %>
-    <%= link_to("submit", "items/new") %>
+    <%= link_to("New Item", new_item_path) %>
 
   </span>
 </nav>
